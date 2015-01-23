@@ -1,0 +1,13 @@
+body {
+	font-family: arial;
+	color: white;
+	text-align: center;
+	background-color: #CD5C5C;
+}
+h1 {
+	font-size: 100%;
+}
+
+.clockText {
+	font-size: 500%;
+}
