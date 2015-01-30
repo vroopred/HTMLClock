@@ -14,20 +14,20 @@ function getTemp() {
 			$("#forecastIcon").attr("src", image);
 
 			var temp = forecast.daily.data[0].temperatureMax;
-			if(temp < 60) {
-				$("body").addClass("cold");
-			}
-			else if(temp >= 60) {
-				$("body").addClass("chilly");
-			}
-			else if(temp >= 70) {
-				$("body").addClass("nice");
+			if(temp >= 90) {
+				$("body").addClass("hot");
 			}
 			else if(temp >= 80) {
 				$("body").addClass("warm");
 			}
+			else if(temp >= 70) {
+				$("body").addClass("nice");
+			}
+			else if(temp >= 60) {
+				$("body").addClass("chilly");
+			}
 			else {
-				$("body").addClass("hot");
+				$("body").addClass("cold");
 			}
 		});
 }
