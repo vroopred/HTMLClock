@@ -88,13 +88,14 @@ function getAllAlarms() {
     });
 
 function showDeletePopup() {
-	$("#maskD").removeClass("hide");
-	$("#popupD").removeClass("hide");
+	$("#maskD").addClass("hide");
+	$("#popupD").addClass("hide");
 }
 
 function hideDeletePopup() {
-	$("#maskD").addClass("hide");
-	$("#popupD").addClass("hide");
+	$("#maskD").removeClass("hide");
+	$("#popupD").removeClass("hide");
+	
 }
 }
 
