@@ -67,7 +67,6 @@ function addAlarm() {
 
 	var AlarmObject = Parse.Object.extend("Alarm");
     var alarmObject = new AlarmObject();
-    hideAlarmPopup();
       alarmObject.save({"hours": hours, "mins": mins, "ampm": ampm, "alarmName": alarmName}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
@@ -87,6 +86,16 @@ function getAllAlarms() {
           }
         }
     });
+
+function showDeletePopup() {
+	$("#maskD").removeClass("hide");
+	$("#popupD").removeClass("hide");
+}
+
+function hideDeletePopup() {
+	$("#maskD").addClass("hide");
+	$("#popupD").addClass("hide");
+}
 }
 
 
