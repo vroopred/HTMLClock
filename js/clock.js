@@ -127,9 +127,9 @@ function deleteAlarm() {
 					location.reload();
 			}
 		},
-		error: function(err) {
-			alert("There are no alarms to delete.");
-			
+		error: function(error) {
+    		alert("Error: " + error.code + " " + error.message);
+
 					hideDeletePopup();
 					location.reload();
 		}
