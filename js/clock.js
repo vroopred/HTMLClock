@@ -117,7 +117,9 @@ function deleteAlarm() {
   						}
 					});
 				}
-					if(find == true) {
+					
+			}
+			if(find == true) {
 						alert("Deleted.");
 					}
 					else {
@@ -125,7 +127,6 @@ function deleteAlarm() {
 					}
 					hideDeletePopup();
 					location.reload();
-			}
 		},
 		error: function(error) {
     		alert("There are no alarms to delete.");
