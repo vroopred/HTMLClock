@@ -106,7 +106,7 @@ function deleteAlarm() {
 		success: function(list) {
 			for(var i = 0; i < list.length; i++) {
 				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").value) {
-					find = true;
+
 					list[i].destroy({
   						success: function(del) {
   						},
@@ -114,6 +114,7 @@ function deleteAlarm() {
   							alert("Could not delete.");
   						}
 					});
+										find = true;
 				}
 					
 			}
