@@ -74,7 +74,11 @@ function addAlarm() {
       alarmObject.save({"time": time, "alarmName": alarmName}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
-        (#alarmName).click(deleteAlarm1(alarmName));
+        $(#alarmName).click(function() {
+
+        	alert("Click deleted");
+        	deleteAlarm1(alarmName);
+        });
 		hideAlarmPopup();
       }
     });
