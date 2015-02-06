@@ -128,7 +128,7 @@ function deleteAlarm() {
 			}
 		},
 		error: function(error) {
-    		alert("There are no alarms to delete.);
+    		alert("There are no alarms to delete.");
 		}
 
 	});
