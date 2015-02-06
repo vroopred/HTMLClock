@@ -110,7 +110,6 @@ function deleteAlarm() {
 					find = true;
 					list[i].destroy({
   						success: function(del) {
-  							alert("Successfully Deleted.");
   						},
   						error: function(del) {
   							alert("Could not delete.");
@@ -122,14 +121,11 @@ function deleteAlarm() {
 			if(find == true) {
 						alert("Deleted.");
 					}
-					else {
-						alert("Could not find alarm.");
-					}
+			else {
+					alert("Could not find alarm.");
+				}
 					hideDeletePopup();
 					location.reload();
-		},
-		error: function(error) {
-    		alert("There are no alarms to delete.");
 		}
 
 	});
