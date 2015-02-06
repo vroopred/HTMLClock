@@ -80,7 +80,7 @@ h2 {
 	margin:10px auto 25px auto;
 }
 
-#popupD {
+#Deletepopup {
 	position:absolute;
 	top:45%;
 	left:0;
@@ -94,15 +94,15 @@ h2 {
 	border-radius:5px;
 	padding:20px;
 }
-#popupD h2 {
+#Deletepopup h2 {
 	width:100%;
 	text-align:left;
 	border-bottom:1px solid #ccc;
 }
-#popupD .button {
+#Deletepopup .button {
 	margin:0px 10px;
 }
-#popupD #deleteAlarmName {
+#Deletepopup #deleteAlarmName {
 	width:90%;
 	font-size:14px;
 	margin:10px auto 25px auto;

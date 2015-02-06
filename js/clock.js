@@ -1,4 +1,3 @@
-
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -90,12 +89,12 @@ function getAllAlarms() {
 
 function showDeletePopup() {
 	$("#mask").removeClass("hide");
-	$("#popupD").removeClass("hide");
+	$("#Deletepopup").removeClass("hide");
 }
 
 function hideDeletePopup() {
 	$("#mask").addClass("hide");
-	$("#popupD").addClass("hide");
+	$("#Deletepopup").addClass("hide");
 }
 
 function deleteAlarm() {
@@ -107,16 +106,14 @@ function deleteAlarm() {
 		success: function(list) {
 			for(var i = 0; i < list.length; i++) {
 				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").value) {
-
-					
+					find = true;
 					list[i].destroy({
   						success: function(del) {
   						},
   						error: function(del) {
-  							alert("Error occured with deletion.");
+  							alert("Could not delete.");
   						}
 					});
-					find = true;
 				}
 					
 			}
@@ -132,13 +129,3 @@ function deleteAlarm() {
 
 	});
 }
-
-
-
-
-
-
-
-
-
-
