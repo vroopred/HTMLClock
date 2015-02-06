@@ -106,7 +106,7 @@ function deleteAlarm() {
 	query.find({
 		success: function(list) {
 			for(var i = 0; i < list.length; i++) {
-				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").innerHTML) {
+				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").value) {
 					find = true;
 					list[i].destroy({
   						success: function(del) {
