@@ -49,7 +49,7 @@ function hideAlarmPopup() {
 
 function insertAlarm(hours, mins, ampm, alarmName) {
 	var blankDiv = $("<div></div>").addClass("flexable");
-	var div1 = $("<div></div>").addClass("name");
+	var div1 = $("<div></div>").addClass("name&nbsp");
 	div1.html(alarmName);
 	var div2 = $("<div></div>").addClass("time");
 	div2.html(hours + ":" + mins +ampm);
