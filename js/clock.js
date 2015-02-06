@@ -123,17 +123,19 @@ function deleteAlarm() {
 					else {
 						alert("Could not find alarm.");
 					}
+					hideDeletePopup();
+					location.reload();
 			}
 		},
 		error: function(error) {
     		alert("Error: " + error.code + " " + error.message);
+
+					
 		}
+		hideDeletePopup();
+					location.reload();
 
 	});
-	
-
-					hideDeletePopup();
-					location.reload();
 }
 
 
