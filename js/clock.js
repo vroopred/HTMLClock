@@ -75,7 +75,7 @@ function addAlarm() {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
         $("#alarms").click(function() {
-
+        	deleteAlarm1(alarmName);
         	alert("Click deleted");
         });
 		hideAlarmPopup();
