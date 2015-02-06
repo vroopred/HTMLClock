@@ -74,10 +74,9 @@ function addAlarm() {
       alarmObject.save({"time": time, "alarmName": alarmName}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
-        $(#alarmName).click(function() {
+        $("#alarms").click(function() {
 
         	alert("Click deleted");
-        	deleteAlarm1(alarmName);
         });
 		hideAlarmPopup();
       }
@@ -139,7 +138,7 @@ function deleteAlarm() {
 		}
 
 	});
-
+}
 
 	function deleteAlarm1(alarmName) {
 	var Alarm = Parse.Object.extend("Alarm");
