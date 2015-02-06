@@ -110,25 +110,25 @@ function deleteAlarm() {
 					find = true;
 					list[i].destroy({
   						success: function(del) {
-  							alert("Successfully Deleted.")
+  							alert("Successfully Deleted.");
   						},
   						error: function(del) {
-  							alert("Could not delete.")
+  							alert("Could not delete.");
   						}
 					});
 				}
 					if(find == true) {
-						alert("Deleted.")
+						alert("Deleted.");
 					}
 					else {
-						alert("Could not find alarm.")
+						alert("Could not find alarm.");
 					}
 					hideDeletePopup();
 					location.reload();
 			}
 		},
 		error: function(err) {
-			alert("There are no alarms to delete.")
+			alert("There are no alarms to delete.");
 		}
 
 	});
