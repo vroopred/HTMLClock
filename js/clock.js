@@ -129,11 +129,10 @@ function deleteAlarm() {
 		},
 		error: function(error) {
     		alert("Error: " + error.code + " " + error.message);
-
+    		hideDeletePopup();
+					location.reload();
 					
 		}
-		hideDeletePopup();
-					location.reload();
 
 	});
 }
