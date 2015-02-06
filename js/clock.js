@@ -90,12 +90,12 @@ function getAllAlarms() {
 
 function showDeletePopup() {
 	$("#mask").removeClass("hide");
-	$("#Deletepopup").removeClass("hide");
+	$("#popupD").removeClass("hide");
 }
 
 function hideDeletePopup() {
 	$("#mask").addClass("hide");
-	$("#Deletepopup").addClass("hide");
+	$("#popupD").addClass("hide");
 }
 
 function deleteAlarm() {
@@ -106,15 +106,15 @@ function deleteAlarm() {
 	query.find({
 		success: function(list) {
 			for(var i = 0; i < list.length; i++) {
-				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").value) {
-					find = true;
+				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").val()) {
 					list[i].destroy({
   						success: function(del) {
   						},
   						error: function(del) {
-  							alert("Could not delete.");
+  							alert("Error occured with deletion.");
   						}
 					});
+					find = true;
 				}
 					
 			}
