@@ -134,7 +134,7 @@ function deleteAlarm() {
 					alert("Could not find alarm.");
 				}
 					hideDeletePopup();
-					getAllAlarms();
+					location.reload()
 		}
 
 	});
