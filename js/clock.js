@@ -63,10 +63,15 @@ function addAlarm() {
 	var mins = $("#mins option:selected").text();
 	var ampm = $("#ampm option:selected").text();
 	var alarmName = $("#alarmName").val();
+	var time = {
+    hours : hours,
+    mins : mins,
+    ampm : ampm,
+  };
 
 	var AlarmObject = Parse.Object.extend("Alarm");
     var alarmObject = new AlarmObject();
-      alarmObject.save({"hours": hours, "mins": mins, "ampm": ampm, "alarmName": alarmName}, {
+      alarmObject.save({"time": time, "alarmName": alarmName}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
 		hideAlarmPopup();
@@ -81,7 +86,7 @@ function getAllAlarms() {
     query.find({
         success: function(results) {
           for (var i = 0; i < results.length; i++) { 
-            insertAlarm(results[i].get("hours"), results[i].get("mins"), results[i].get("ampm"), results[i].get("alarmName"));
+            insertAlarm(results[i].get("time").hours, results[i].get("time").mins, results[i].get("time").ampm, results[i].get("alarmName"));
           }
         }
     });
