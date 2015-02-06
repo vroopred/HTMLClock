@@ -130,7 +130,7 @@ function deleteAlarm() {
 					alert("Could not find alarm.");
 				}
 					hideDeletePopup();
-					location.reload();
+					getAllAlarms();
 		}
 
 	});
