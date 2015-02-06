@@ -20,11 +20,11 @@
 			<div id = "alarmHeader" class = "flexable">
 				<h2>Alarms</h2>
 				<input type="button" value="Add Alarm" class="button" onclick="showAlarmPopup()"/>
-
 			</div>
 			<div id="alarms"></div>
-			<input type="button" value="Delete Alarm" class="button" onclick="showDeletePopup()"/>
 		</div>
+		<input type="button" value="Delete Alarm" class="button" onclick="showDeletePopup()"/>
+
 		<div id = "mask" class="hide"></div>
 		<div id = "popup" class="hide">
     		<h2>Add Alarm</h2>
@@ -61,13 +61,13 @@
     		</div>
 		</div>
 
-		<div id = "maskD" class="hide"></div>
-		<div id = "popupD" class="hide">
-    	<h2>Add Alarm</h2>
+		<div id = "mask" class="hide"></div>
+		<div id = "Deletepopup" class="hide">
+    	<h2>Delete Alarm</h2>
     		<input type="text" id="deleteAlarmName" placeholder="Delete Alarm Name" />      
     		<div class="flexable">
         		<input type="button" value="Cancel" class="button" onclick="hideDeletePopup()"/>
-        		<input type="button" value="Delete Alarm" class="button" onclick="ddeleteAlarm()"/>
+        		<input type="button" value="Delete Alarm" class="button" onclick="deleteAlarm()"/>
     		</div>
 		</div>
 	</body>

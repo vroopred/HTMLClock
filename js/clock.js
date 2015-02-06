@@ -86,18 +86,40 @@ function getAllAlarms() {
           }
         }
     });
+}
 
 function showDeletePopup() {
-	$("#maskD").addClass("hide");
-	$("#popupD").addClass("hide");
+	$("#mask").removeClass("hide");
+	$("#Deletepopup").removeClass("hide");
 }
 
 function hideDeletePopup() {
-	$("#maskD").removeClass("hide");
-	$("#popupD").removeClass("hide");
-	
+	$("#mask").addClass("hide");
+	$("#Deletepopup").addClass("hide");
 }
+
+function deleteAlarm() {
+	var Alarm = Parse.Object.extend("Alarm");
+	var query = new Parse.Query(Alarm);
+
+	query.find({
+		success: function(list) {
+			for(var i = 0; i < list.length; i++) {
+				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").innerHTML) {
+					list[i].destroy({
+  						success: function(del) {
+  							alert("Successfully Deleted.")
+  						}
+					});
+					hideDeletePopup();
+					location.reload();
+				}
+			}
+		}
+
+	});
 }
+
 
 
 

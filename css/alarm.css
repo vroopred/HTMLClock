@@ -79,3 +79,31 @@ h2 {
 	font-size:14px;
 	margin:10px auto 25px auto;
 }
+
+#Deletepopup {
+	position:absolute;
+	top:45%;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	width:250px;
+	z-index:1;
+	background-color:white;
+	border:1px solid #ccc;
+	border-radius:5px;
+	padding:20px;
+}
+#Deletepopup h2 {
+	width:100%;
+	text-align:left;
+	border-bottom:1px solid #ccc;
+}
+#Deletepopup .button {
+	margin:0px 10px;
+}
+#Deletepopup #deleteAlarmName {
+	width:90%;
+	font-size:14px;
+	margin:10px auto 25px auto;
+}
