@@ -101,19 +101,30 @@ function hideDeletePopup() {
 function deleteAlarm() {
 	var Alarm = Parse.Object.extend("Alarm");
 	var query = new Parse.Query(Alarm);
+	var find = false;
 
 	query.find({
 		success: function(list) {
 			for(var i = 0; i < list.length; i++) {
 				if(list[i].get("alarmName") == document.getElementById("deleteAlarmName").innerHTML) {
+					find = true;
 					list[i].destroy({
   						success: function(del) {
   							alert("Successfully Deleted.")
+  						},
+  						error: function(del) {
+  							alert("Could not delete.")
   						}
 					});
+				}
+					if(find == true) {
+						alert("Deleted.")
+					}
+					else {
+						alert("Could not find alarm.")
+					}
 					hideDeletePopup();
 					location.reload();
-				}
 			}
 		}
 
