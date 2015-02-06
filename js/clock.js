@@ -111,10 +111,10 @@ function deleteAlarm() {
   						success: function(del) {
   						},
   						error: function(del) {
-  							alert("Could not delete.");
+  							alert("Error occured with deletion.");
   						}
 					});
-										find = true;
+					find = true;
 				}
 					
 			}
