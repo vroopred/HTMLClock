@@ -74,6 +74,7 @@ function addAlarm() {
       alarmObject.save({"time": time, "alarmName": alarmName}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
+        (#alarmName).click(deleteAlarm1(alarmName));
 		hideAlarmPopup();
       }
     });
@@ -130,6 +131,39 @@ function deleteAlarm() {
 					alert("Could not find alarm.");
 				}
 					hideDeletePopup();
+					getAllAlarms();
+		}
+
+	});
+
+
+	function deleteAlarm1(alarmName) {
+	var Alarm = Parse.Object.extend("Alarm");
+	var query = new Parse.Query(Alarm);
+	var find = false;
+
+	query.find({
+		success: function(list) {
+			for(var i = 0; i < list.length; i++) {
+				if(list[i].get("alarmName") == alarmName) {
+
+					list[i].destroy({
+  						success: function(del) {
+  						},
+  						error: function(del) {
+  							alert("Error occured with deletion.");
+  						}
+					});
+					find = true;
+				}
+					
+			}
+			if(find == true) {
+						alert("Deleted.");
+					}
+			else {
+					alert("Could not find alarm.");
+				}
 					getAllAlarms();
 		}
 
