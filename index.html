@@ -16,6 +16,11 @@
 		<p class = "clockText" id = "clock"> </p>
 		<div id = "forecastLabel">Forecast Label</div>
 		<img  src = "" id = "forecastIcon" alt = "icon">
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+		</fb:login-button>
+
+		<div id="status">
+		</div>
 		<div id = "alarmContainer">
 			<div id = "alarmHeader" class = "flexable">
 				<h2>Alarms</h2>
