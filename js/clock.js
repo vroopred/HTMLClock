@@ -82,10 +82,11 @@ function addAlarm(userID) {
     });
 }
 
-function getAllAlarms() {
+function getAllAlarms(userID) {
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
 	    var AlarmObject = Parse.Object.extend("Alarm");
     var query = new Parse.Query(AlarmObject);
+    query.equalTo('userID', userID);
     query.find({
         success: function(results) {
           for (var i = 0; i < results.length; i++) { 
@@ -248,6 +249,8 @@ function statusChangeCallback(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Hi ' + response.name + '!';
-     getAllAlarms();
+        $("#alarms").html("");
+
+     getAllAlarms(userID);
     });
   }
