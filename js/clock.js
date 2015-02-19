@@ -76,18 +76,15 @@ function addAlarm() {
       alarmObject.save({"time": time, "alarmName": alarmName, "userID": userIDg}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
-                alert("added"+userID+"k");
+                alert("added");
 				hideAlarmPopup();
       }
     });
 }
 
 function getAllAlarms(userID) {
-	alert(userIDg+"first");
       userIDg = userID;
-      alert(userIDg+"second");
 	if(userID != null) {
-		alert("here "+ userID);
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
 	    var AlarmObject = Parse.Object.extend("Alarm");
     var query = new Parse.Query(AlarmObject);
@@ -95,14 +92,12 @@ function getAllAlarms(userID) {
     query.find({
         success: function(results) {
           for (var i = 0; i < results.length; i++) { 
-          	alert(results.length);
             insertAlarm(results[i].get("time").hours, results[i].get("time").mins, results[i].get("time").ampm, results[i].get("alarmName"));
           }
         }
     });
 }
 else {
-	alert("clearing");
 	$("#alarms").html("");
 }
 }
@@ -260,7 +255,7 @@ function statusChangeCallback(response) {
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Hi ' + response.id + '!';
+        'Hi ' + response.name + '!';
         $("#alarms").html("");
 
      getAllAlarms(response.id);
