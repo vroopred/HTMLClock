@@ -83,7 +83,9 @@ function addAlarm() {
 }
 
 function getAllAlarms(userID) {
+	alert(userIDg+"first");
       userIDg = userID;
+      alert(userIDg+"second");
 	if(userID != null) {
 		alert("here "+ userID);
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
