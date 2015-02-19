@@ -1,4 +1,4 @@
-var username = "";
+var userID = -1;
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -60,7 +60,7 @@ function insertAlarm(hours, mins, ampm, alarmName) {
 }
 
 
-function addAlarm(username) {
+function addAlarm(userID) {
 	var hours = $("#hours option:selected").text();
 	var mins = $("#mins option:selected").text();
 	var ampm = $("#ampm option:selected").text();
@@ -73,7 +73,7 @@ function addAlarm(username) {
 
 	var AlarmObject = Parse.Object.extend("Alarm");
     var alarmObject = new AlarmObject();
-      alarmObject.save({"time": time, "alarmName": alarmName}, {
+      alarmObject.save({"time": time, "alarmName": alarmName, "userID": userID}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
                 alert("added");
@@ -181,7 +181,7 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      username = response.name;
+      userID = response.id;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -248,6 +248,6 @@ function statusChangeCallback(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Hi ' + response.name + '!';
-        
+
     });
   }
