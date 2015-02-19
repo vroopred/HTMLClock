@@ -60,7 +60,7 @@ function insertAlarm(hours, mins, ampm, alarmName) {
 }
 
 
-function addAlarm(userID) {
+function addAlarm() {
 	var hours = $("#hours option:selected").text();
 	var mins = $("#mins option:selected").text();
 	var ampm = $("#ampm option:selected").text();
@@ -83,6 +83,7 @@ function addAlarm(userID) {
 }
 
 function getAllAlarms(userID) {
+
 	if(userID != null) {
 		alert("here "+ userID);
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
