@@ -1,4 +1,4 @@
-var userID = "";
+var userID = null;
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -83,8 +83,8 @@ function addAlarm(userID) {
 }
 
 function getAllAlarms(userID) {
-	alert(userID);
 	if(userID != null) {
+		alert("here");
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
 	    var AlarmObject = Parse.Object.extend("Alarm");
     var query = new Parse.Query(AlarmObject);
@@ -98,6 +98,7 @@ function getAllAlarms(userID) {
     });
 }
 else {
+	alert("clearing");
 	$("#alarms").html("");
 }
 }
@@ -255,9 +256,9 @@ function statusChangeCallback(response) {
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Hi ' + response.name + '!';
+        'Hi ' + response.id + '!';
         $("#alarms").html("");
 
-     getAllAlarms(response.name);
+     getAllAlarms(response.id);
     });
   }
