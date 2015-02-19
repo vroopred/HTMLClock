@@ -200,6 +200,7 @@ function statusChangeCallback(response) {
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
+    document.location.reload();
   }
 
   // This function is called when someone finishes with the Login
@@ -257,7 +258,7 @@ function statusChangeCallback(response) {
       document.getElementById('status').innerHTML =
         'Hi ' + response.name + '!';
         $("#alarms").html("");
-
+      document.location.reload();
      getAllAlarms(response.id);
      userIDg = response.id;
     });
