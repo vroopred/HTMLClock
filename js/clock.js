@@ -96,6 +96,9 @@ function getAllAlarms(userID) {
         }
     });
 }
+else {
+	$("#alarms").empty();
+}
 }
 
 function showDeletePopup() {
