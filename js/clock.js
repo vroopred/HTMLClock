@@ -61,7 +61,6 @@ function insertAlarm(hours, mins, ampm, alarmName) {
 
 
 function addAlarm(userID) {
-	alert(userID);
 	var hours = $("#hours option:selected").text();
 	var mins = $("#mins option:selected").text();
 	var ampm = $("#ampm option:selected").text();
@@ -77,7 +76,7 @@ function addAlarm(userID) {
       alarmObject.save({"time": time, "alarmName": alarmName, "userID": userID}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
-                alert("added");
+                alert("added"+userID+"k");
 				hideAlarmPopup();
       }
     });
