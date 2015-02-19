@@ -1,4 +1,4 @@
-var userID = -1;
+var userID = null;
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -83,6 +83,7 @@ function addAlarm(userID) {
 }
 
 function getAllAlarms(userID) {
+	if(userID != null) {
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
 	    var AlarmObject = Parse.Object.extend("Alarm");
     var query = new Parse.Query(AlarmObject);
@@ -94,6 +95,7 @@ function getAllAlarms(userID) {
           }
         }
     });
+}
 }
 
 function showDeletePopup() {
@@ -244,6 +246,7 @@ function statusChangeCallback(response) {
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
+
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
