@@ -12,20 +12,25 @@
 	</head>
 
 	<body onload = "getInfo(); getAllAlarms()">
+		<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 		<h1>What's the Time?</h1>
 		<p class = "clockText" id = "clock"> </p>
 		<div id = "forecastLabel">Forecast Label</div>
 		<img  src = "" id = "forecastIcon" alt = "icon">
-		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-		</fb:login-button>
 
-		<div id="status">
-		</div>
 		<div id = "alarmContainer">
 			<div id = "alarmHeader" class = "flexable">
 				<h2>Alarms</h2>
 				<input type="button" value="Add Alarm" class="button" onclick="showAlarmPopup()"/>
 			</div>
+
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+		<div id="status">hello</div>
 			<div id="alarms"></div>
 		</div>
 		<input type="button" value="Delete Alarm" class="button" onclick="showDeletePopup()"/>
