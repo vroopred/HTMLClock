@@ -1,4 +1,4 @@
-var userID = null;
+var userID = "";
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -188,7 +188,7 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      userID = response.id;
+      userID = response.name;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
