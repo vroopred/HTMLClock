@@ -83,6 +83,7 @@ function addAlarm(userID) {
 }
 
 function getAllAlarms(userID) {
+	alert(userID);
 	if(userID != null) {
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
 	    var AlarmObject = Parse.Object.extend("Alarm");
@@ -97,7 +98,7 @@ function getAllAlarms(userID) {
     });
 }
 else {
-	$("#alarms").empty();
+	$("#alarms").html("");
 }
 }
 
