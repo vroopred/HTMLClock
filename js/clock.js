@@ -83,7 +83,7 @@ function addAlarm() {
 }
 
 function getAllAlarms(userID) {
-
+      userIDg = userID;
 	if(userID != null) {
 		alert("here "+ userID);
 	Parse.initialize("vC5Npzg5L5xeSOOdLClryl4cfpC0cuPHuTMoKpXH", "1jC5M6BzOI3r352eoaa8UbUMYbCkJWswWLCEhvvF");
@@ -191,7 +191,7 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      userID = response.name;
+      userIDg = response.id;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
