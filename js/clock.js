@@ -1,4 +1,4 @@
-var userID = null;
+var userIDg = null;
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -73,7 +73,7 @@ function addAlarm() {
 
 	var AlarmObject = Parse.Object.extend("Alarm");
     var alarmObject = new AlarmObject();
-      alarmObject.save({"time": time, "alarmName": alarmName, "userID": userID}, {
+      alarmObject.save({"time": time, "alarmName": alarmName, "userID": userIDg}, {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
                 alert("added"+userID+"k");
@@ -262,5 +262,6 @@ function statusChangeCallback(response) {
         $("#alarms").html("");
 
      getAllAlarms(response.id);
+     userIDg = response.id;
     });
   }
