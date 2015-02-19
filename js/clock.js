@@ -248,7 +248,6 @@ function statusChangeCallback(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Hi ' + response.name + '!';
-        document.location.reload();
      getAllAlarms();
     });
   }
