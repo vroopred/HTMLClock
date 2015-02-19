@@ -56,11 +56,6 @@ function insertAlarm(hours, mins, ampm, alarmName) {
 	blankDiv.append(div2);
 	$("#alarms").append(blankDiv);
 
-        $blankDiv.click(function() {
-        	var name = $(this).get("name").value;
-        	deleteAlarm1(name);
-        	alert("Click deleted");
-        });
 }
 
 
@@ -79,10 +74,9 @@ function addAlarm() {
     var alarmObject = new AlarmObject();
       alarmObject.save({"time": time, "alarmName": alarmName}, {
       success: function(object) {
-      	
-        alert("added");
-		hideAlarmPopup();
         insertAlarm(hours, mins, ampm, alarmName);
+                alert("added");
+				hideAlarmPopup();
       }
     });
 }
