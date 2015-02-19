@@ -192,7 +192,6 @@ function statusChangeCallback(response) {
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
-        location.reload();
     }
   }
 
@@ -249,6 +248,6 @@ function statusChangeCallback(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Hi ' + response.name + '!';
-        location.reload();
+        
     });
   }
