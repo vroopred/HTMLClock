@@ -258,6 +258,6 @@ function statusChangeCallback(response) {
         'Hi ' + response.name + '!';
         $("#alarms").html("");
 
-     getAllAlarms(userID);
+     getAllAlarms(response.name);
     });
   }
