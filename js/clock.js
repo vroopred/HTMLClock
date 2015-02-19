@@ -1,3 +1,4 @@
+var username = "";
 function getTime() {
     var time = new Date().toLocaleTimeString();
     document.getElementById('clock').innerHTML = time;
@@ -59,7 +60,7 @@ function insertAlarm(hours, mins, ampm, alarmName) {
 }
 
 
-function addAlarm() {
+function addAlarm(username) {
 	var hours = $("#hours option:selected").text();
 	var mins = $("#mins option:selected").text();
 	var ampm = $("#ampm option:selected").text();
@@ -180,6 +181,7 @@ function statusChangeCallback(response) {
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
+      username = response.name;
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -190,6 +192,7 @@ function statusChangeCallback(response) {
       // they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
+        location.reload();
     }
   }
 
@@ -245,6 +248,7 @@ function statusChangeCallback(response) {
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+        'Hi ' + response.name + '!';
+        location.reload();
     });
   }
