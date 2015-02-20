@@ -29,7 +29,8 @@
                 <input type="button" value="Add Alarm" class="button" onclick="showAlarmPopup()"/>
             </div>
 
-        <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+       <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
         <div id="status">hello</div>
             <div id="alarms"></div>
         </div>
