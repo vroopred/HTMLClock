@@ -140,6 +140,7 @@ function deleteAlarm() {
 					alert("Could not find alarm.");
 				}
 					hideDeletePopup();
+					location.reload();
 		}
 
 	});
@@ -199,7 +200,6 @@ function statusChangeCallback(response) {
       document.getElementById('status').innerHTML = 'Please log ' +
         'into Facebook.';
     }
-    document.location.reload();
   }
 
   // This function is called when someone finishes with the Login
