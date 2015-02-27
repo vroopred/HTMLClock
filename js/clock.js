@@ -77,6 +77,7 @@ function addAlarm() {
       success: function(object) {
         insertAlarm(hours, mins, ampm, alarmName);
                 alert("added");
+                ga('send', 'event', 'Alarm', 'Add');
         hideAlarmPopup();
       }
     });
@@ -124,6 +125,7 @@ function deleteAlarm() {
 
           list[i].destroy({
               success: function(del) {
+                ga('send', 'event', 'Alarm', 'Delete');
               },
               error: function(del) {
                 alert("Error occured with deletion.");
