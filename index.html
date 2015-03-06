@@ -28,8 +28,12 @@
 
 <button type="button" onclick="login()">Sign into Imgur.</button>
 <script type="text/javascript">
-      init({client_id: "21eec6be4ca6b11", type: "token", callback_function: test});
-      </script>
+      init(
+        {client_id: "21eec6be4ca6b11", 
+         type: "token", 
+         callback_function: callback}
+         );
+</script>
 
         <h1>What's the Time?</h1>
         <p class = "clockText" id = "clock"> </p>
